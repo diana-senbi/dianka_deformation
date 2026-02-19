@@ -255,3 +255,16 @@ textarea{resize:vertical}
 
 /* ===== Table ===== */
 .table{margin-top:10
+.luck{
+  display:block;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid rgba(245,158,11,.55);
+  background: rgba(245,158,11,.14);
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+#quick{
+  border-color: rgba(245,158,11,.45);
+}
