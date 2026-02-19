@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Бағалау | Инженер-сарапшының тергеуі</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <span class="logo">🛠️</span>
+        <div>
+          <div class="brand-title">Инженер-сарапшының тергеуі</div>
+          <div class="brand-sub">Электронды бағалау + авторлық жүйе</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="navlink" href="index.html">Кіріспе</a>
+        <a class="navlink active" href="assessment.html">Бағалау</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Тергеу тапсырмасы</h1>
+      <p class="muted">
+        Мақсат: фотоайғақ → деформацияны анықтау → күш түрін табу → есеппен дәлелдеу → сарапшылық қорытынды ұсыну.
+      </p>
+
+      <div class="evidence-strip">
+        <figure class="evidence">
+          <img src="assets/bridge.jpg" alt="Фотоайғақ 1" />
+          <figcaption class="muted">Фотоайғақ 1</figcaption>
+        </figure>
+        <figure class="evidence">
+          <img src="assets/evidence1.jpg" alt="Фотоайғақ 2" />
+          <figcaption class="muted">Фотоайғақ 2</figcaption>
+        </figure>
+        <figure class="evidence">
+          <img src="assets/evidence2.jpg" alt="Фотоайғақ 3" />
+          <figcaption class="muted">Фотоайғақ 3</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="grid2">
+      <article class="card">
+        <h2>1-кезең: Визуалды талдау</h2>
+        <div class="qbox">
+          <div class="qtitle">Сұрақ 1</div>
+          <div class="qtext">
+            Суреттегі материалдың пішініне қарап, оның бастапқы қалпына келе алмайтынын көріп тұрмыз.
+            Бұл деформацияның қай түрі (механикалық қасиеті тұрғысынан)?
+          </div>
+          <div class="answers">
+            <label class="opt"><input type="radio" name="a1" value="A"> A) Серпімді</label>
+            <label class="opt"><input type="radio" name="a1" value="B"> B) Пластикалық</label>
+            <label class="opt"><input type="radio" name="a1" value="C"> C) Морт сыну</label>
+          </div>
+        </div>
+
+        <h2>2-кезең: Күштің бағыты</h2>
+        <div class="qbox">
+          <div class="qtitle">Сұрақ 2</div>
+          <div class="qtext">
+            Тіреуіштің бір бөлігінде материал «жіңішкерген» (молекулалар алыстаған).
+            Бұл жерде қандай деформация түрі орын алған?
+          </div>
+          <div class="answers">
+            <label class="opt"><input type="radio" name="a2" value="stretch"> Созылу</label>
+            <label class="opt"><input type="radio" name="a2" value="compress"> Сығылу</label>
+            <label class="opt"><input type="radio" name="a2" value="twist"> Бұралу</label>
+            <label class="opt"><input type="radio" name="a2" value="bend"> Иілу</label>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>3-кезең: «Үзілу шегі» есебі</h2>
+        <p class="muted">
+          Кернеу формуласы: <b>\(\sigma = \frac{F}{S}\)</b> (Па). 1 МПа = 1 000 000 Па.
+        </p>
+
+        <div class="qbox">
+          <div class="qtitle">Есеп 3</div>
+          <div class="qtext">
+            Берілгені: \(S=0{,}05\ \text{м}^2\), \(F=1\,000\,000\ \text{Н}\).
+            Материалдың беріктік шегі \(150\ \text{МПа}\). Материал шыдады ма?
+          </div>
+
+          <div class="inputs">
+            <label class="field">
+              <span>Кернеу σ (МПа):</span>
+              <input id="sigmaInput" type="number" step="0.01" placeholder="мыс: 20" />
+            </label>
+            <label class="field">
+              <span>Қорытынды:</span>
+              <select id="strengthSelect">
+                <option value="">таңда…</option>
+                <option value="withstood">Шыдады (σ &lt; 150 МПа)</option>
+                <option value="failed">Шыдамады (σ ≥ 150 МПа)</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="hint card-lite">
+            <div class="muted">
+              Рус: правильное σ должно получиться 20 МПа, т.к. 1 000 000 / 0.05 = 20 000 000 Па = 20 МПа.
+            </div>
+          </div>
+        </div>
+
+        <h2>4-кезең: Сарапшылық қорытынды</h2>
+        <div class="qbox">
+          <div class="qtitle">Қорытынды (3–5 сөйлем)</div>
+          <textarea id="expertConclusion" rows="5" placeholder="Мысалы: қандай деформациялар болды, есеп бойынша не шықты, ұсыныс..."></textarea>
+        </div>
+
+        <div class="qbox">
+          <div class="qtitle">Ұсыныс (міндетті емес)</div>
+          <textarea id="expertSuggestion" rows="3" placeholder="Материалды ауыстыру, түйіндерді күшейту, қауіпсіздік тексерісі..."></textarea>
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Титан деңгейі: Мем-физика</h2>
+      <p class="muted">
+        Төмендегі кестеден бір жолды таңда да, <b>неге сәйкес</b> екенін 1 сөйлеммен дәлелде.
+      </p>
+
+      <div class="table card-lite">
+        <div class="trow thead">
+          <div>Деформация түрі</div>
+          <div>Мем бейнесі</div>
+        </div>
+        <div class="trow">
+          <div><b>Созылу</b></div>
+          <div>Көліктің артына жабысып сүйретіліп бара жатқан мультфильм кейіпкері.</div>
+        </div>
+        <div class="trow">
+          <div><b>Сығылу</b></div>
+          <div>Таңертеңгі толы автобустағы адамдардың түрі.</div>
+        </div>
+        <div class="trow">
+          <div><b>Бұралу</b></div>
+          <div>Сүлгіні сығып жатқан қолдар немесе билеп жүрген «бұралған» адам.</div>
+        </div>
+        <div class="trow">
+          <div><b>Иілу</b></div>
+          <div>Ауыр сөмке асынып, белі бүгілген оқушы.</div>
+        </div>
+      </div>
+
+      <div class="inputs">
+        <label class="field">
+          <span>Мен таңдадым:</span>
+          <select id="memeSelect">
+            <option value="">таңда…</option>
+            <option value="Созылу">Созылу</option>
+            <option value="Сығылу">Сығылу</option>
+            <option value="Бұралу">Бұралу</option>
+            <option value="Иілу">Иілу</option>
+          </select>
+        </label>
+      </div>
+
+      <label class="field full">
+        <span>Неге дәл осы мем сәйкес? (1 сөйлем)</span>
+        <input id="memeJustification" type="text" placeholder="Мысалы: Созылуда дене ұзарады, кейіпкер сүйретіліп «созылып» кетеді..." />
+      </label>
+
+      <div class="rubric card-lite">
+        <div class="rubric-title">Авторлық шкала (Креативтілік)</div>
+        <ul class="muted list">
+          <li><b>«Сынбайтын (5)»</b> — таңдау + нақты физикалық дәлел + қосымша өз мысалы бар.</li>
+          <li><b>«Иілгіш (4)»</b> — таңдау + дәлел бар.</li>
+          <li><b>«Морт (3)»</b> — тек таңдады, дәлел жоқ/әлсіз.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Рефлексия: 3–2–1 (Деформация нұсқасы)</h2>
+      <p class="muted">
+        3 факт • 2 мысал • 1 сұрақ — мұғалімге келесі сабаққа бағыт.
+      </p>
+
+      <div class="grid321">
+        <div class="card-lite">
+          <div class="qtitle">3 факт</div>
+          <textarea id="facts3" rows="4" placeholder="1) ...&#10;2) ...&#10;3) ..."></textarea>
+        </div>
+        <div class="card-lite">
+          <div class="qtitle">2 мысал</div>
+          <textarea id="examples2" rows="4" placeholder="1) ...&#10;2) ..."></textarea>
+        </div>
+        <div class="card-lite">
+          <div class="qtitle">1 сұрақ</div>
+          <textarea id="question1" rows="4" placeholder="Маған әлі түсініксіз..."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Нәтиже</h2>
+      <p class="muted">Төмендегі батырманы бас — сайт сенің инженерлік рейтингіңді, achievement және рефлексияны жинақтап береді.</p>
+
+      <div class="cta-row">
+        <button class="btn primary" id="calcBtn">Нәтижені есептеу</button>
+        <button class="btn" id="copyBtn" disabled>Нәтижені көшіру</button>
+      </div>
+
+      <div id="resultBox" class="result card-lite" aria-live="polite">
+        <div class="muted">Нәтиже әлі есептелмеді.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container muted">
+      © Инженер-сарапшының тергеуі • Электронды бағалау • 3–2–1 рефлексия
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
