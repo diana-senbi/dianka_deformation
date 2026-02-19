@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Деформация | Инженер-сарапшының тергеуі</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand">
+        <span class="logo">⚙️</span>
+        <div>
+          <div class="brand-title">Деформация</div>
+          <div class="brand-sub">Авторлық электронды бағалау жүйесі</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="navlink active" href="index.html">Кіріспе</a>
+        <a class="navlink" href="assessment.html">Бағалау</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div class="hero-text">
+        <h1>«Инженер-сарапшының тергеуі»</h1>
+        <p class="muted">
+          Құрметті маман! Қаладағы жаңа көпірдің (немесе ғимараттың) тіреуіші зақымдалды.
+          Фотоайғақтарды зерттеп, апаттың себебін анықтаңыз. Сіздің қорытындыңызға қаланың қауіпсіздігі байланысты!
+        </p>
+
+        <div class="badges">
+          <span class="badge">🟠 Пластилин</span>
+          <span class="badge">🟤 Ағаш</span>
+          <span class="badge">🩶 Болат</span>
+          <span class="badge">🟣 Титан</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn primary" href="assessment.html">Тергеуді бастау →</a>
+          <button class="btn ghost" id="scrollEvidence">Фотоайғақтарға түсу</button>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <figure class="media card-lite">
+          <img src="assets/bridge.jpg" alt="Зақымдалған көпір/арқалық фотоайғақ" />
+          <figcaption class="muted">
+            Фотоайғақ (өз суретіңді assets/bridge.jpg ретінде жүкте)
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="evidence" class="grid2">
+      <article class="card">
+        <h2>1-кезең: Визуалды талдау</h2>
+        <p class="muted">
+          Суреттегі материалдың пішініне қарап, оның бастапқы қалпына келе алмайтынын көріп тұрмыз.
+          Бұл деформацияның қай түрі (механикалық қасиеті тұрғысынан)?
+        </p>
+
+        <div class="qbox">
+          <div class="qtitle">Сұрақ 1</div>
+          <div class="answers">
+            <label class="opt"><input type="radio" name="q1" value="A"> A) Серпімді</label>
+            <label class="opt"><input type="radio" name="q1" value="B"> B) Пластикалық</label>
+            <label class="opt"><input type="radio" name="q1" value="C"> C) Морт сыну</label>
+          </div>
+          <button class="btn" id="checkQ1">Тексеру</button>
+          <div class="feedback" id="fbQ1" aria-live="polite"></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2>2-кезең: Күштің бағыты</h2>
+        <p class="muted">
+          Тіреуіштің мына бөлігіндегі материал «жіңішкерген», яғни молекулалар алыстап кеткен.
+          Бұл жерде қандай деформация түрі орын алған?
+        </p>
+
+        <div class="qbox">
+          <div class="qtitle">Сұрақ 2</div>
+          <div class="answers">
+            <label class="opt"><input type="radio" name="q2" value="stretch"> Созылу</label>
+            <label class="opt"><input type="radio" name="q2" value="compress"> Сығылу</label>
+            <label class="opt"><input type="radio" name="q2" value="twist"> Бұралу</label>
+            <label class="opt"><input type="radio" name="q2" value="bend"> Иілу</label>
+          </div>
+          <button class="btn" id="checkQ2">Тексеру</button>
+          <div class="feedback" id="fbQ2" aria-live="polite"></div>
+        </div>
+
+        <div class="note card-lite">
+          <div class="muted">
+            Кеңес: «жіңішкеру» көбіне <b>созылу</b> кезінде байқалады.
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Не болады 2-бетте?</h2>
+      <ul class="muted list">
+        <li>3-кезең: «Үзілу шегі» есебі (кернеу \(\sigma = F/S\)).</li>
+        <li>4-кезең: Сарапшылық қорытынды + инженерлік рейтинг.</li>
+        <li>Мем-физика (Титан деңгейі) + 3-2-1 рефлексия.</li>
+        <li>Нәтижені бір батырмамен көшіру.</li>
+      </ul>
+      <a class="btn primary" href="assessment.html">Электронды бағалауға өту →</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container muted">
+      © 9-сынып Физика • Деформация • Авторлық бағалау жүйесі
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Рус: мини-проверка на первой странице (2 вопроса), чтобы было "живое" взаимодействие
+    window.addEventListener("DOMContentLoaded", () => {
+      const scrollBtn = document.getElementById("scrollEvidence");
+      scrollBtn?.addEventListener("click", () => {
+        document.getElementById("evidence")?.scrollIntoView({behavior:"smooth"});
+      });
+
+      document.getElementById("checkQ1")?.addEventListener("click", () => {
+        const v = document.querySelector('input[name="q1"]:checked')?.value;
+        const fb = document.getElementById("fbQ1");
+        if (!fb) return;
+        if (!v) { fb.className = "feedback warn"; fb.textContent = "Алдымен жауап таңда."; return; }
+        if (v === "B") {
+          fb.className = "feedback ok";
+          fb.textContent = "Дұрыс ✅ Пішін қайта келмесе — пластикалық деформация.";
+        } else {
+          fb.className = "feedback bad";
+          fb.textContent = "Қате ❌ Қайта қалпына келмейтін болса — пластикалық деформация.";
+        }
+      });
+
+      document.getElementById("checkQ2")?.addEventListener("click", () => {
+        const v = document.querySelector('input[name="q2"]:checked')?.value;
+        const fb = document.getElementById("fbQ2");
+        if (!fb) return;
+        if (!v) { fb.className = "feedback warn"; fb.textContent = "Алдымен жауап таңда."; return; }
+        if (v === "stretch") {
+          fb.className = "feedback ok";
+          fb.textContent = "Дұрыс ✅ «Жіңішкеру» — созылу деформациясына тән.";
+        } else {
+          fb.className = "feedback bad";
+          fb.textContent = "Қате ❌ Бұл белгі көбіне созылу кезінде байқалады.";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
