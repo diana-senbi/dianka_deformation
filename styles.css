@@ -268,3 +268,46 @@ textarea{resize:vertical}
 #quick{
   border-color: rgba(245,158,11,.45);
 }
+/* Мем-кесте: фото + подпись */
+.memeCell{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.memeImg{
+  width:100%;
+  max-width:520px;
+  height:180px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+.memeCap{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* Кестені "кесте сияқты" ұстап тұру */
+.table{
+  padding:10px 12px;
+}
+
+.trow{
+  display:grid;
+  grid-template-columns: 200px 1fr;
+  gap:12px;
+  padding:12px 0;
+  border-top:1px solid var(--line);
+}
+
+@media (max-width: 700px){
+  .trow{
+    grid-template-columns: 1fr;
+  }
+  .memeImg{
+    height:170px;
+  }
+}
